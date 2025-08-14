@@ -1,41 +1,17 @@
 // Ejercicio For 6: Calculadora de Potencias
 // Implementa una función que use un ciclo for para calcular la potencia de un número sin usar Math.pow(). 
 // Debe mostrar el proceso paso a paso.
-console.log("=== Calculadora de Potencias ===");
 
-function calcularPotencia(base, exponente) {
-    if (exponente === 0) {
-        console.log(`${base}^${exponente} = 1 (cualquier número elevado a 0 es 1)`);
-        return 1;
-    }
-
-    let resultado = 1;
-
-    console.log(`Calculando ${base}^${exponente}:`);
-    console.log(`Paso inicial: resultado = 1`);
-
-    for (let i = 1; i <= Math.abs(exponente); i++) {
-        resultado *= base;
-        console.log(`Paso ${i}: resultado = resultado * ${base} = ${resultado}`);
-    }
-
-    if (exponente < 0) {
-        resultado = 1 / resultado;
-        console.log(`Exponente negativo: resultado = 1/${resultado * base} = ${resultado}`);
-    }
-
-    return resultado;
+function potencia(base, exponente) {
+	let resultado = 1;
+	let proceso = `${base}^${exponente} = `;
+	for (let i = 1; i <= exponente; i++) {
+		resultado *= base;
+		proceso += (i === 1 ? base : ` x ${base}`);
+	}
+	console.log(proceso + ` = ${resultado}`);
+	return resultado;
 }
 
-let ejemplos = [
-    {base: 2, exponente: 5},
-    {base: 3, exponente: 4},
-    {base: 5, exponente: 3},
-    {base: 10, exponente: 2}
-];
-
-for (let i = 0; i < ejemplos.length; i++) {
-    let {base, exponente} = ejemplos[i];
-    let resultado = calcularPotencia(base, exponente);
-    console.log(`\nResultado final: ${base}^${exponente} = ${resultado}\n`);
-}
+// Ejemplo de uso
+potencia(3, 4); // 3^4 = 3 x 3 x 3 x 3 = 81

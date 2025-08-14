@@ -1,19 +1,16 @@
 // Ejercicio While 2: Suma de Números Pares
 // Implementa un ciclo while que sume todos los números pares entre 1 y 100. 
 // Muestra el resultado final y cuántos números se sumaron.
-console.log("=== Suma de Números Pares ===");
 
-let numero = 2; 
+let num = 2;
 let suma = 0;
-let cantidadPares = 0;
-
-while (numero <= 50) {
-    suma += numero;
-    cantidadPares++;
-    console.log(`Número par: ${numero}, Suma acumulada: ${suma}`);
-    numero += 2; 
+let cantidad = 0;
+while (num <= 100) {
+	suma += num;
+	cantidad++;
+	num += 2;
 }
+console.log("Suma total de pares entre 1 y 100:", suma);
+console.log("Cantidad de números sumados:", cantidad);
 
-console.log(`\nResultado final:`);
-console.log(`Suma total de números pares: ${suma}`);
-console.log(`Cantidad de números pares sumados: ${cantidadPares}`);
+
