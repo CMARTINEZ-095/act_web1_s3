@@ -13,4 +13,6 @@ while (num <= 100) {
 console.log("Suma total de pares entre 1 y 100:", suma);
 console.log("Cantidad de números sumados:", cantidad);
 
+// Ejercicio While 3: Contador de Vocales
+
 
